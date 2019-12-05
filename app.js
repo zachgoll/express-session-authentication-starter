@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 var passport = require('passport');
 var crypto = require('crypto');
-var Strategy = require('passport-local').Strategy;
+var LocalStrategy = require('passport-local').Strategy;
 
 // Package documentation - https://www.npmjs.com/package/connect-mongo
 const MongoStore = require('connect-mongo')(session);
@@ -59,7 +59,7 @@ const User = connection.model('User', UserSchema);
  * object.  The user object is then serialized with `passport.serializeUser()` and added to the 
  * `req.session.passport` object. 
  */
-passport.use(new Strategy(
+passport.use(new LocalStrategy(
     function(username, password, cb) {
         User.findOne({ username: username })
             .then((user) => {
