@@ -5,6 +5,17 @@ const connection = require('../config/database');
 const User = connection.models.User;
 
 /**
+ * -------------- POST ROUTES ----------------
+ */
+
+ // TODO
+ router.post('/login', (req, res, next) => {});
+
+ // TODO
+ router.post('/register', (req, res, next) => {});
+
+
+ /**
  * -------------- GET ROUTES ----------------
  */
 
@@ -64,37 +75,6 @@ router.get('/login-success', (req, res, next) => {
 
 router.get('/login-failure', (req, res, next) => {
     res.send('You entered the wrong password.');
-});
-
-/**
- * -------------- POST ROUTES ----------------
- */
-
-// Since we are using the passport.authenticate() method, we should be redirected no matter what 
-router.post('/login', passport.authenticate('local', { failureRedirect: '/login-failure', successRedirect: 'login-success' }), (err, req, res, next) => {
-    if (err) next(err);
-});
-
-router.post('/register', (req, res, next) => {
-    
-    const saltHash = passwordUtils.genPassword(req.body.password);
-    
-    const salt = saltHash.salt;
-    const hash = saltHash.hash;
-
-    const newUser = new User({
-        username: req.body.username,
-        hash: hash,
-        salt: salt
-    });
-
-    newUser.save()
-        .then((user) => {
-            console.log(user);
-        });
-
-    res.redirect('/login');
-
 });
 
 module.exports = router;
