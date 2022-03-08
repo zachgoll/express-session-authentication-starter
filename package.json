@@ -4,7 +4,8 @@
   "description": "A tutorial on session based user authentication using Passport JS",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -L"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "mongoose": "^5.7.12",
+    "nodemon": "^2.0.15",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
   }
