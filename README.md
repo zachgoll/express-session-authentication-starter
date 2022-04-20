@@ -21,4 +21,4 @@ When you go to each branch, the `README.md` will show you how to start the app.
 The `master` branch is incomplete and you can follow the written or video tutorials to complete:
 
 * Written - https://zachgoll.github.io/blog/2019/choosing-authentication-strategy/
-* Video - Coming soon
+* Video - https://www.youtube.com/watch?v=F-sFp_AvHc8
