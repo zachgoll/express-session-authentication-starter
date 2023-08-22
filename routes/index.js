@@ -9,22 +9,22 @@ const User = connection.models.User;
  */
 
  // TODO
- router.post('/login', (req, res, next) => {});
+ router.post('/login', (req, res) => {});
 
  // TODO
- router.post('/register', (req, res, next) => {});
+ router.post('/register', (req, res) => {});
 
 
  /**
  * -------------- GET ROUTES ----------------
  */
 
-router.get('/', (req, res, next) => {
+router.get('/', (req, res) => {
     res.send('<h1>Home</h1><p>Please <a href="/register">register</a></p>');
 });
 
 // When you visit http://localhost:3000/login, you will see "Login Page"
-router.get('/login', (req, res, next) => {
+router.get('/login', (req, res) => {
    
     const form = '<h1>Login Page</h1><form method="POST" action="/login">\
     Enter Username:<br><input type="text" name="username">\
@@ -36,7 +36,7 @@ router.get('/login', (req, res, next) => {
 });
 
 // When you visit http://localhost:3000/register, you will see "Register Page"
-router.get('/register', (req, res, next) => {
+router.get('/register', (req, res) => {
 
     const form = '<h1>Register Page</h1><form method="post" action="register">\
                     Enter Username:<br><input type="text" name="username">\
@@ -53,7 +53,7 @@ router.get('/register', (req, res, next) => {
  * 
  * Also, look up what behaviour express session has without a maxage set
  */
-router.get('/protected-route', (req, res, next) => {
+router.get('/protected-route', (req, res) => {
     
     // This is how you check if a user is authenticated and protect a route.  You could turn this into a custom middleware to make it less redundant
     if (req.isAuthenticated()) {
@@ -64,16 +64,16 @@ router.get('/protected-route', (req, res, next) => {
 });
 
 // Visiting this route logs the user out
-router.get('/logout', (req, res, next) => {
+router.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/protected-route');
 });
 
-router.get('/login-success', (req, res, next) => {
+router.get('/login-success', (req, res) => {
     res.send('<p>You successfully logged in. --> <a href="/protected-route">Go to protected route</a></p>');
 });
 
-router.get('/login-failure', (req, res, next) => {
+router.get('/login-failure', (req, res) => {
     res.send('You entered the wrong password.');
 });
 
