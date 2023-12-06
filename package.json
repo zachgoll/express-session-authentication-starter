@@ -4,7 +4,9 @@
   "description": "A tutorial on session based user authentication using Passport JS",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "devStart": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
