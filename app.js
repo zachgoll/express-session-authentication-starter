@@ -22,6 +22,12 @@ var app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+// testing environmental variables
+console.log("DB_STRING: ", process.env.DB_STRING)
+console.log("DB_STRING: ", process.env.DB_PASSWORD)
+console.log("DB_STRING: ", process.env.SECRET)
+
+
 
 /**
  * -------------- SESSION SETUP ----------------
@@ -68,4 +74,5 @@ app.use(routes);
  */
 
 // Server listens on http://localhost:3000
-app.listen(3000);
+console.log("PORT: ", process.env.PORT)
+app.listen(process.env.PORT);

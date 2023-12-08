@@ -14,11 +14,6 @@ COPY . .
 
 ENV PORT=8080
 
-#TODO need to add enviornment variables for db string and db password
-ENV DB_STRING=mongodb+srv://mekhihart:mekhihart@session.520mjt6.mongodb.net/
-ENV DB_PASSWORD=mekhihart
-ENV SECRET=helloworld
-
 # Exposes the port that should be published by the user
 EXPOSE 8080
 
