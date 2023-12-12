@@ -16,6 +16,8 @@ The `master` branch has a starter template for creating what is in the `final` b
 
 ## How to run the app
 
+_Make sure to run the `mongod` service before running the app locally._
+
 When you go to each branch, the `README.md` will show you how to start the app.
 
 The `master` branch is incomplete and you can follow the written or video tutorials to complete:
