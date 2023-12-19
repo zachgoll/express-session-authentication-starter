@@ -9,5 +9,14 @@ pipeline{
                 }
             }
         }
+
+        stage("Unit Tests"){
+            steps{
+                script{
+                    sh "npm run test"
+                }
+            }
+        }
+
     }
 }
